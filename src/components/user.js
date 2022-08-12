@@ -7,7 +7,7 @@ const User=()=>{
 const[user,setUser]=useState([]);
 
 const fetchData=async()=>{
-    const data=await (await fetch("https://jsonplaceholder.typicode.com/users")).json();
+    const data=await (await fetch("https://api.github.com/users")).json();
     console.log(data);
     setUser(data);
 }
@@ -26,43 +26,41 @@ useEffect(()=>{
         <div className={styles.displayUser}>
             <div className={styles.userImage}>
                
-              <img src={avatar} alt=""/>
+              {/* <img src={avatar} alt=""/> */}
+              <img src={item.avatar_url} alt=""/>
                
             </div>
             <div className={styles.userName}>
-           {item.name}
+           {item.login}
             </div>
 
         </div>
 
         <div className={styles.text}>
-            
+            Our Equilibrium collection promotes balance and calm
         </div>
 
         <div className={styles.days}>
-            
+            <div className="id">
+                {item.id}
+            </div>
         </div>
 
         <div className={styles.userFooter}>
             <div className={styles.footerPhoto}>
-    
+            <img src={item.avatar_url} alt=""/>
              </div> 
 
              <div className={styles.footerName}>
-    
+                     {item.login}
              </div>
         </div>
 
 </div>
-
-
-    
+   
 )
     
     )} 
-
-
-
 
 </>
 
