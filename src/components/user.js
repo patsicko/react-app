@@ -36,9 +36,7 @@ useEffect(()=>{
 
         </div>
 
-        <div className={styles.text}>
-            Our Equilibrium collection promotes balance and calm
-        </div>
+        {text()}
 
         <div className={styles.days}>
             <div className="id">
@@ -66,6 +64,12 @@ useEffect(()=>{
 
     );
 
+
+    function text() {
+        return <div className={styles.text}>
+            Our Equilibrium collection promotes balance and calm
+        </div>;
+    }
 }
 
 export default User;
